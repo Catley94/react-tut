@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './CSS/index.css';
 
 /*
 TODO:
@@ -154,6 +154,7 @@ class Game extends React.Component {
       }
     return (
       <div className="game">
+        
         <div className="game-board">
           <Board
           squares={current.squares}
@@ -161,6 +162,7 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
+          <h4>React - Tic Tac Toe</h4>
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>

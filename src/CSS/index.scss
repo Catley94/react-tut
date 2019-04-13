@@ -1,0 +1,76 @@
+$mobile: 600px;
+@mixin mobile {
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+  }
+  
+  ol, ul {
+    padding-left: 30px;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .status {
+    margin-bottom: 10px;
+  }
+  
+  .square {
+    grid-area: square;
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 2em;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 2em;
+    @include mobile {
+        font-size: 40px;
+        height: 2em;
+        width: 2em;
+        margin: 10px;
+    }
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+  
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+  
+  .game {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+    grid-template-areas:
+    "square"
+    "gameinfo";
+    justify-items: center;
+    @include mobile {
+    
+    }    
+  }
+  
+  .game-info {
+    grid-area: gameinfo;
+    position: relative;
+    font-size: 30px;
+    @include mobile {
+    }
+  }
+  
